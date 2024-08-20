@@ -1,8 +1,10 @@
 import React from 'react'
+import { useQuizes } from '../contexts/QuizContext';
 
-export default function Options({ question, dispatch, answer }) {
+export default function Options() {
+  const { questions, index, answer, dispatch } = useQuizes();
+  const question = questions.at(index);
   const hasAnswered = answer !== null;
-
   return (
     <div className="options">
         {question.options.map((option, index) => (

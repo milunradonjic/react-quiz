@@ -1,6 +1,8 @@
 import React from 'react'
+import { useQuizes } from '../contexts/QuizContext'
 
-export default function RestartButton({ dispatch }) {
+export default function RestartButton() {
+  const {dispatch} = useQuizes();
   return (
     <button
       className="btn btn-ui"
